@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { useState } from 'react'
 
 import Bar from '../components/bar'
@@ -22,6 +24,10 @@ export default function Home() {
   }
 
   return (
+    <>
+    <Head>
+      <title>Expenses Chart</title>
+    </Head>
     <div className='h-screen flex flex-col gap-8'>
     <main className="mt-20 flex-col w-full flex gap-4 justify-center items-center">
 
@@ -33,7 +39,7 @@ export default function Home() {
           <p id='balance_value' className='text-2xl font-semibold'>$921.48</p>
         </div>
 
-        <img src='logo.svg' />
+        <img src='logo.svg' alt='logo'/>
       </div>
 
       {/* stats card */}
@@ -60,5 +66,6 @@ export default function Home() {
     </main>
     <div className='w-full text-center text-sm pb-2 text-mymediumbrown'>click <a onClick={ () => randomize() } className='text-blue-600 cursor-pointer hover:underline'>here</a> to shuffle data</div>
     </div>
+    </>
   )
 }
